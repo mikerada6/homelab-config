@@ -1,3 +1,19 @@
+spring:
+  # RabbitMQ Connection (Common to all services)
+  rabbitmq:
+    host: 192.168.86.250
+    port: 5672
+    # Standardize the virtual host or naming if you want
+    # virtual-host: /
+
+  # Postgres Base Configuration
+  datasource:
+    url: jdbc:postgresql://192.168.86.250:5432/${spring.application.name}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+
 # Infrastructure Addresses
 management:
   zipkin:
