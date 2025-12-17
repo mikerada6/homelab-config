@@ -1,0 +1,19 @@
+logging:
+  level:
+    root: WARN
+    org.rezatron: INFO
+    org.springframework.web: WARN
+
+management:
+  tracing:
+    sampling:
+      probability: 0.1  # Only capture 10% of traces to save disk space
+  
+  metrics:
+    export:
+      prometheus:
+        step: 1m       # Scrape every minute (less load)
+
+# Configure Loki Appender for Prod (assuming you use a Logback Loki Appender)
+loki:
+  url: "http://192.168.86.250:3100/loki/api/v1/push"
