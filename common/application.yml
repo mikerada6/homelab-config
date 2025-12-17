@@ -1,0 +1,29 @@
+# Infrastructure Addresses
+management:
+  zipkin:
+    tracing:
+      endpoint: "http://192.168.86.250:9411/api/v2/spans"
+  otlp:
+    metrics:
+      export:
+        url: "http://192.168.86.250:4318/v1/metrics" # If using OTel collector
+
+# Observability common settings
+management:
+  endpoints:
+    web:
+      exposure:
+        # Standardize what endpoints are available everywhere
+        include: "health,info,prometheus,metrics"
+  endpoint:
+    health:
+      show-details: when_authorized
+  metrics:
+    tags:
+      # Automatically tag every metric with the service name
+      application: ${spring.application.name}
+
+# Default Logging Format (Clean and standardized)
+logging:
+  pattern:
+    level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
