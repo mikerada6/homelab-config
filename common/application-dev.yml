@@ -1,0 +1,15 @@
+logging:
+  level:
+    root: INFO
+    org.rezatron: DEBUG  # Your package name
+    org.springframework.web: DEBUG
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0  # Capture 100% of traces in Dev
+  
+  metrics:
+    export:
+      prometheus:
+        step: 15s      # Frequent scraping for real-time debugging
