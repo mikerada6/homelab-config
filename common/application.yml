@@ -14,7 +14,7 @@ spring:
       maximum-pool-size: 10
       minimum-idle: 2
 
-# Infrastructure Addresses
+# Infrastructure Addresses & Observability Settings merged
 management:
   zipkin:
     tracing:
@@ -23,9 +23,6 @@ management:
     metrics:
       export:
         url: "http://192.168.86.250:4318/v1/metrics" # If using OTel collector
-
-# Observability common settings
-management:
   endpoints:
     web:
       exposure:
