@@ -1,0 +1,3 @@
+urza:
+  feature-flags:
+    new-market-algo: false # Default for everyone
