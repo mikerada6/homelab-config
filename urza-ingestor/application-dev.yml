@@ -1,0 +1,7 @@
+logging:
+  level:
+    org.rezatron: DEBUG
+
+urza:
+  feature-flags:
+    new-market-algo: true # Enable feature in dev only
