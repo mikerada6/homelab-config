@@ -1,8 +1,0 @@
-# application.yml in homelab-config GitHub repo
-spring:
-  application:
-    name: common-app
-
-rezatron:
-  message: Hello from the public config!
-  environment: homelab
